@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"os"
 
-	cfenv "github.com/cloudfoundry-community/go-cfenv"
+	cfenv "github.com/cloud-gov/go-cfenv"
 )
 
-//Index holds fields displayed on the index.html template
+// Index holds fields displayed on the index.html template
 type Index struct {
 	AppName          string
 	AppInstanceIndex int
@@ -18,7 +18,7 @@ type Index struct {
 	Services         []Service
 }
 
-//Service holds the name and label of a service instance
+// Service holds the name and label of a service instance
 type Service struct {
 	Name  string
 	Label string
