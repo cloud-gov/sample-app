@@ -1,8 +1,11 @@
 module github.com/cloudfoundry-tutorials/sample-app
 
-go 1.14
+go 1.21
+
+require github.com/cloud-gov/go-cfenv v1.19.0
 
 require (
-	github.com/cloud-gov/go-cfenv v1.19.0
-	github.com/mitchellh/mapstructure v1.1.2
+	github.com/mitchellh/mapstructure v1.1.2 // indirect
+	golang.org/x/net v0.21.0 // indirect
+	gopkg.in/yaml.v2 v2.4.0 // indirect
 )
