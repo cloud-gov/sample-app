@@ -1,8 +1,9 @@
 ---
 applications:
-- name: dhs-sample
+- name: sample-app
   instances: 1
   memory: 32M
   disk_quota: 64M
+  random-route: true
   buildpacks:
   - go_buildpack
