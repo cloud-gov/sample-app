@@ -1,4 +1,4 @@
-module github.com/cloudfoundry-tutorials/sample-app
+module github.com/cloud-gov/sample-app
 
 go 1.21
 
