@@ -16,6 +16,7 @@ type Index struct {
 	AppInstanceIndex int
 	AppInstanceGUID  string
 	Services         []Service
+	HostName         string
 }
 
 // Service holds the name and label of a service instance
@@ -26,7 +27,7 @@ type Service struct {
 
 func main() {
 
-	index := Index{"Unknown", -1, "Unknown", []Service{}}
+	index := Index{"Unknown", -1, "Unknown", []Service{}, "Unknown"}
 
 	template := template.Must(template.ParseFiles("templates/index.html"))
 
@@ -60,6 +61,7 @@ func main() {
 		w.Header().Set("Cache-Control", "no-cache, no-store, must-revalidate") // HTTP 1.1.
 		w.Header().Set("Pragma", "no-cache")                                   // HTTP 1.0.
 		w.Header().Set("Expires", "0")                                         // Proxies.
+		index.HostName = r.Host
 		if err := template.ExecuteTemplate(w, "index.html", index); err != nil {
 			http.Error(w, err.Error(), http.StatusInternalServerError)
 		}
